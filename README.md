@@ -23,8 +23,8 @@ StationB;18.2
 StationC;30.1
 ```
 
-🔹 **Formato:** `nome_da_estacao;temperatura`
-🔹 **Tamanho esperado:** ~12GB para 1 bilhão de linhas
+🔹 **Formato:** `nome_da_estacao;temperatura` <br>
+🔹 **Tamanho esperado:** ~12GB para 1 bilhão de linhas <br>
 🔹 **Gerado usando escrita sequencial em modo `append`**
 
 Para executar:
@@ -39,7 +39,7 @@ python createMeasurements.py
 O arquivo `solucao_bs.py` faz a leitura linha por linha e soma as temperaturas utilizando a biblioteca `csv`.
 
 ### 🚨 Problemas da Solução Simples
-❌ Lenta para arquivos massivos (leitura sequencial)
+❌ Lenta para arquivos massivos (leitura sequencial) <br>
 ❌ Alto consumo de CPU sem aproveitamento de paralelismo
 
 ---
@@ -49,15 +49,15 @@ O arquivo `solucao_bs.py` faz a leitura linha por linha e soma as temperaturas u
 O arquivo `solucao_ad.py` converte os dados para o formato **Parquet**, que é mais eficiente para leitura e agregações.
 
 ### **Etapas:**
-1️⃣ **Converte o CSV para Parquet** (compressão reduz o tamanho em até 90%)
-2️⃣ **Usa Lazy Evaluation** para processar apenas o necessário
+1️⃣ **Converte o CSV para Parquet** (compressão reduz o tamanho em até 90%) <br>
+2️⃣ **Usa Lazy Evaluation** para processar apenas o necessário <br>
 3️⃣ **Utiliza paralelismo** para acelerar os cálculos
 
 ### 🎯 **Benefícios da Otimização**
-✅ **Processamento paralelo** utilizando todos os núcleos do CPU
-✅ **Lazy Evaluation** (evita carregamento desnecessário de dados)
-✅ **Redução de tamanho** (CSV ~13.5GB → Parquet ~3GB)
-✅ **Leitura otimizada** (apenas colunas necessárias são carregadas)
+✅ **Processamento paralelo** utilizando todos os núcleos do CPU <br>
+✅ **Lazy Evaluation** (evita carregamento desnecessário de dados) <br>
+✅ **Redução de tamanho** (CSV ~13.5GB → Parquet ~3GB) <br>
+✅ **Leitura otimizada** (apenas colunas necessárias são carregadas) <br>
 
 ---
 
@@ -72,9 +72,9 @@ O arquivo `solucao_ad.py` converte os dados para o formato **Parquet**, que é m
 
 ## 🔧 5. Possíveis Melhorias
 
-🔹 **Particionamento no Parquet** (dividir por estação meteorológica)
-🔹 **Uso de DuckDB ou Spark** para processamento distribuído
-🔹 **Armazenamento em SSD NVMe** para reduzir latência de I/O
+🔹 **Particionamento no Parquet** (dividir por estação meteorológica) <br>
+🔹 **Uso de DuckDB ou Spark** para processamento distribuído <br>
+🔹 **Armazenamento em SSD NVMe** para reduzir latência de I/O <br>
 🔹 **Multithreading na leitura do CSV**
 
 ---
