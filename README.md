@@ -9,7 +9,7 @@ Foram desenvolvidas duas abordagens:
 ---
 
 # 🎥 Vídeo Explicativo
-![Vídeo Explicativo](https://youtu.be/LhdQwwtz99s)
+[🔗 **Link para o Vídeo no YouTube**](https://youtu.be/LhdQwwtz99s)
 
 ---
 
